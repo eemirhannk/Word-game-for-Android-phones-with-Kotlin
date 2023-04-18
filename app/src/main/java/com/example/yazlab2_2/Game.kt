@@ -1,10 +1,11 @@
 package com.example.yazlab2_2
 
-import android.bluetooth.BluetoothA2dp
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
+import android.widget.TextView
+import kotlin.random.Random
 
 
 class Game : AppCompatActivity() {
@@ -32,9 +33,11 @@ class Game : AppCompatActivity() {
     var once = 0
 
     private fun next_shape(){
-        B1.setBackgroundResource(R.drawable.red);B2.setBackgroundResource(R.drawable.red);B3.setBackgroundResource(R.drawable.red);B4.setBackgroundResource(R.drawable.red);B5.setBackgroundResource(R.drawable.red);B6.setBackgroundResource(R.drawable.red);B7.setBackgroundResource(R.drawable.red);B8.setBackgroundResource(R.drawable.red);
-        B9.setBackgroundResource(R.drawable.red);B10.setBackgroundResource(R.drawable.red);B11.setBackgroundResource(R.drawable.red);B12.setBackgroundResource(R.drawable.red);B13.setBackgroundResource(R.drawable.red);B14.setBackgroundResource(R.drawable.red);B15.setBackgroundResource(R.drawable.red);B16.setBackgroundResource(R.drawable.red);
-        B17.setBackgroundResource(R.drawable.red);B18.setBackgroundResource(R.drawable.red);B19.setBackgroundResource(R.drawable.red);B20.setBackgroundResource(R.drawable.red);B21.setBackgroundResource(R.drawable.red);B22.setBackgroundResource(R.drawable.red);B23.setBackgroundResource(R.drawable.red);B24.setBackgroundResource(R.drawable.red);
+        findViewById<TextView>(R.id.B1).text = "D";findViewById<TextView>(R.id.B2).text = "D";findViewById<TextView>(R.id.B3).text = "D";findViewById<TextView>(R.id.B4).text = "D";findViewById<TextView>(R.id.B5).text = "D";findViewById<TextView>(R.id.B6).text = "D";findViewById<TextView>(R.id.B7).text = "D";findViewById<TextView>(R.id.B8).text = "D";
+        findViewById<TextView>(R.id.B9).text = "D";findViewById<TextView>(R.id.B10).text = "D";findViewById<TextView>(R.id.B11).text = "D";findViewById<TextView>(R.id.B12).text = "D";findViewById<TextView>(R.id.B13).text = "D";findViewById<TextView>(R.id.B14).text = "D";findViewById<TextView>(R.id.B15).text = "D";findViewById<TextView>(R.id.B16).text = "D";
+        findViewById<TextView>(R.id.B17).text = "D";findViewById<TextView>(R.id.B18).text = "D";findViewById<TextView>(R.id.B19).text = "D";findViewById<TextView>(R.id.B20).text = "D";findViewById<TextView>(R.id.B21).text = "D";findViewById<TextView>(R.id.B22).text = "D";findViewById<TextView>(R.id.B23).text = "D";findViewById<TextView>(R.id.B24).text = "D";
+
+
     }
 
 
