@@ -4,16 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#B6B6B6">
+    android:background="#1f242d">
 
     <GridLayout
         android:id="@+id/gridLayout2"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:background="@drawable/block"
-        android:layout_marginTop="15dp"
-        android:columnCount="3"
-        android:rowCount="3"
+        android:background="#323946"
+        android:layout_marginTop="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -21,10 +19,11 @@
 
         <TextView
             android:id="@+id/scoreHolder"
-            android:layout_width="wrap_content"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="       0"
-            android:textColor="@color/black"
+            android:text="0"
+            android:textAlignment="center"
+            android:textColor="#0ef"
             android:textSize="50dp"
             />
     </GridLayout>
@@ -45,20 +44,24 @@
             android:layout_height="92dp"
             android:layout_row="1"
             android:layout_column="0"
+            android:cursorVisible="false"
             android:gravity="center"
+
+
+            android:text="X"
             android:textSize="33sp"
             android:textStyle="bold"
-
-
-            android:text="X" />
+            android:textColor="#0ef"
+            app:cornerRadius="20dp" />
 
         <EditText
             android:id="@+id/edit_text"
             android:layout_width="210dp"
             android:layout_height="60dp"
             android:layout_row="1"
+            android:textColor="@color/white"
             android:layout_column="1"
-            android:background="@drawable/red"
+            android:background="#323946"
             android:hint=""
             tools:ignore="SpeakableTextPresentCheck" />
 
@@ -70,12 +73,11 @@
             android:layout_row="1"
             android:layout_column="2"
             android:gravity="center"
+            android:text="✓"
             android:textSize="33sp"
             android:textStyle="bold"
-
-
-
-            android:text="✓" />
+            android:textColor="#0ef"
+            app:cornerRadius="20dp" />
     </GridLayout>
 
     <GridLayout
@@ -85,9 +87,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="25dp"
         android:layout_marginTop="20dp"
-        android:background="@drawable/block"
+        android:background="#323946"
         android:columnCount="20"
         android:rowCount="20"
+        app:layout_constraintBottom_toTopOf="@+id/TextViews"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/gridLayout2">
 
@@ -97,7 +100,7 @@
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="0"
-            android:background="@drawable/block" />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B2"
@@ -105,64 +108,63 @@
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B3"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B4"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B5"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B6"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B7"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B8"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="0"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B9"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="1"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B10"
@@ -170,64 +172,63 @@
             android:layout_height="45dp"
             android:layout_row="1"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B11"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="1"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B12"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="1"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B13"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="1"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B14"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="1"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B15"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="1"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B16"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="1"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B17"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="2"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B18"
@@ -235,64 +236,63 @@
             android:layout_height="45dp"
             android:layout_row="2"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B19"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="2"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B20"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="2"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B21"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="2"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B22"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="2"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B23"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="2"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B24"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="2"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B25"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="3"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B26"
@@ -300,64 +300,63 @@
             android:layout_height="45dp"
             android:layout_row="3"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B27"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="3"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B28"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="3"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B29"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="3"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B30"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="3"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B31"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="3"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B32"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="3"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B33"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="4"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B34"
@@ -365,64 +364,63 @@
             android:layout_height="45dp"
             android:layout_row="4"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B35"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="4"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B36"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="4"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B37"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="4"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B38"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="4"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B39"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="4"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B40"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="4"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B41"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="5"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B42"
@@ -430,64 +428,63 @@
             android:layout_height="45dp"
             android:layout_row="5"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B43"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="5"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B44"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="5"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B45"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="5"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B46"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="5"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B47"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="5"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B48"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="5"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B49"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="6"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B50"
@@ -495,64 +492,63 @@
             android:layout_height="45dp"
             android:layout_row="6"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B51"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="6"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B52"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="6"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B53"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="6"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B54"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="6"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B55"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="6"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B56"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="6"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B57"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="7"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B58"
@@ -560,64 +556,63 @@
             android:layout_height="45dp"
             android:layout_row="7"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B59"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="7"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B60"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="7"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B61"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="7"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B62"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="7"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B63"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="7"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B64"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="7"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B65"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="8"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B66"
@@ -625,64 +620,63 @@
             android:layout_height="45dp"
             android:layout_row="8"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B67"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="8"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B68"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="8"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B69"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="8"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B70"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="8"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B71"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="8"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B72"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="8"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B73"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="9"
             android:layout_column="0"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
 
         <TextView
             android:id="@+id/B74"
@@ -690,56 +684,55 @@
             android:layout_height="45dp"
             android:layout_row="9"
             android:layout_column="1"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B75"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="9"
             android:layout_column="2"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B76"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="9"
             android:layout_column="3"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B77"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="9"
             android:layout_column="4"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B78"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="9"
             android:layout_column="5"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B79"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="9"
             android:layout_column="6"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
+
         <TextView
             android:id="@+id/B80"
             android:layout_width="45dp"
             android:layout_height="45dp"
             android:layout_row="9"
             android:layout_column="7"
-            android:background="@drawable/block"
-            />
+            android:background="#323946" />
     </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
