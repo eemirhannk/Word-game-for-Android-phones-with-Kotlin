@@ -1,24 +1,63 @@
 package com.example.yazlab2_2
 
-import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
+import androidx.annotation.RequiresApi
 import kotlinx.coroutines.delay
+import java.io.BufferedReader
+import java.io.InputStream
+import java.io.InputStreamReader
+import java.time.Duration
+import java.util.*
 import kotlin.random.Random
 import kotlin.random.nextInt
+import kotlin.concurrent.scheduleAtFixedRate
+import kotlin.concurrent.timerTask
 
 
 class Game : AppCompatActivity() {
+    var counter = 0;
+
+
+    //otomatik düsme icin tanımlanmıs bir cronjobın yöneticisi
+    fun autoDownCronJobManager() {
+        println("Program Başladı")
+        // Zamanlanmış fonksiyon çağırma
+        Timer().schedule(object : TimerTask() {
+            override fun run() {
+
+                //  8 thread ile aynı anda çalıştır
+                println("Zamanlanmış fonksiyon çağırıldı")
+                autoDownCronJobB1()
+                autoDownCronJobB2()
+                autoDownCronJobB3()
+                autoDownCronJobB4()
+                autoDownCronJobB5()
+                autoDownCronJobB6()
+                autoDownCronJobB7()
+                autoDownCronJobB8()
+
+            }
+        }, 3000, 500) // 5000 milisaniye (5 saniye) sonra çağrılacak
+        println("Program Devam Ediyor")
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE);
-        this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        this.getWindow().setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN
+        );
         getSupportActionBar()?.hide();
 
         setContentView(R.layout.game)
@@ -26,9 +65,508 @@ class Game : AppCompatActivity() {
         next_shape()
         onClicks()
 
+        autoDownCronJobManager()
+
+
+        val clickedButton = findViewById(R.id.correctTextView) as Button
+        clickedButton.setOnClickListener {
+            var edit_text = (findViewById<View>(R.id.edit_text)) as TextView
+            var isWordCorrectResult = isWordCorrect(edit_text.text)
+        }
+
     }
 
-    var nextUp:Int = 0
+
+    fun autoDownCronJobB1(): String {
+        if (findViewById<TextView>(R.id.B1).text != "" && findViewById<TextView>(R.id.B9).text == "") {
+            val B1Char = findViewById<TextView>(R.id.B1).text
+            findViewById<TextView>(R.id.B1).text = ""
+            findViewById<TextView>(R.id.B9).text = B1Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B9).text != "" && findViewById<TextView>(R.id.B17).text == "") {
+            val B9Char = findViewById<TextView>(R.id.B9).text
+            findViewById<TextView>(R.id.B9).text = ""
+            findViewById<TextView>(R.id.B17).text = B9Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B17).text != "" && findViewById<TextView>(R.id.B25).text == "") {
+            val B17Char = findViewById<TextView>(R.id.B17).text
+            findViewById<TextView>(R.id.B17).text = ""
+            findViewById<TextView>(R.id.B25).text = B17Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B25).text != "" && findViewById<TextView>(R.id.B33).text == "") {
+            val B25Char = findViewById<TextView>(R.id.B25).text
+            findViewById<TextView>(R.id.B25).text = ""
+            findViewById<TextView>(R.id.B33).text = B25Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B33).text != "" && findViewById<TextView>(R.id.B41).text == "") {
+            val B25Char = findViewById<TextView>(R.id.B33).text
+            findViewById<TextView>(R.id.B33).text = ""
+            findViewById<TextView>(R.id.B41).text = B25Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B41).text != "" && findViewById<TextView>(R.id.B49).text == "") {
+            val B25Char = findViewById<TextView>(R.id.B41).text
+            findViewById<TextView>(R.id.B41).text = ""
+            findViewById<TextView>(R.id.B49).text = B25Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B49).text != "" && findViewById<TextView>(R.id.B57).text == "") {
+            val B25Char = findViewById<TextView>(R.id.B49).text
+            findViewById<TextView>(R.id.B49).text = ""
+            findViewById<TextView>(R.id.B57).text = B25Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B57).text != "" && findViewById<TextView>(R.id.B65).text == "") {
+            val B25Char = findViewById<TextView>(R.id.B57).text
+            findViewById<TextView>(R.id.B57).text = ""
+            findViewById<TextView>(R.id.B65).text = B25Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B65).text != "" && findViewById<TextView>(R.id.B73).text == "") {
+            val B25Char = findViewById<TextView>(R.id.B65).text
+            findViewById<TextView>(R.id.B65).text = ""
+            findViewById<TextView>(R.id.B73).text = B25Char
+        }
+        Thread.sleep(50)
+
+        return "";
+    }
+
+    fun autoDownCronJobB2(): String {
+        if (findViewById<TextView>(R.id.B2).text != "" && findViewById<TextView>(R.id.B10).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B2).text
+            findViewById<TextView>(R.id.B2).text = ""
+            findViewById<TextView>(R.id.B10).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B10).text != "" && findViewById<TextView>(R.id.B18).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B10).text
+            findViewById<TextView>(R.id.B10).text = ""
+            findViewById<TextView>(R.id.B18).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B18).text != "" && findViewById<TextView>(R.id.B26).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B18).text
+            findViewById<TextView>(R.id.B18).text = ""
+            findViewById<TextView>(R.id.B26).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B26).text != "" && findViewById<TextView>(R.id.B34).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B26).text
+            findViewById<TextView>(R.id.B26).text = ""
+            findViewById<TextView>(R.id.B34).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B34).text != "" && findViewById<TextView>(R.id.B42).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B34).text
+            findViewById<TextView>(R.id.B34).text = ""
+            findViewById<TextView>(R.id.B42).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B42).text != "" && findViewById<TextView>(R.id.B50).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B42).text
+            findViewById<TextView>(R.id.B42).text = ""
+            findViewById<TextView>(R.id.B50).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B50).text != "" && findViewById<TextView>(R.id.B58).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B50).text
+            findViewById<TextView>(R.id.B50).text = ""
+            findViewById<TextView>(R.id.B58).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B58).text != "" && findViewById<TextView>(R.id.B66).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B58).text
+            findViewById<TextView>(R.id.B58).text = ""
+            findViewById<TextView>(R.id.B66).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B66).text != "" && findViewById<TextView>(R.id.B74).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B66).text
+            findViewById<TextView>(R.id.B66).text = ""
+            findViewById<TextView>(R.id.B74).text = B2Char
+        }
+        Thread.sleep(50)
+        return "";
+    }
+
+    fun autoDownCronJobB3(): String {
+        if (findViewById<TextView>(R.id.B3).text != "" && findViewById<TextView>(R.id.B11).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B3).text
+            findViewById<TextView>(R.id.B3).text = ""
+            findViewById<TextView>(R.id.B11).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B11).text != "" && findViewById<TextView>(R.id.B19).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B11).text
+            findViewById<TextView>(R.id.B11).text = ""
+            findViewById<TextView>(R.id.B19).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B19).text != "" && findViewById<TextView>(R.id.B27).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B19).text
+            findViewById<TextView>(R.id.B19).text = ""
+            findViewById<TextView>(R.id.B27).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B27).text != "" && findViewById<TextView>(R.id.B35).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B27).text
+            findViewById<TextView>(R.id.B27).text = ""
+            findViewById<TextView>(R.id.B35).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B35).text != "" && findViewById<TextView>(R.id.B43).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B35).text
+            findViewById<TextView>(R.id.B35).text = ""
+            findViewById<TextView>(R.id.B43).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B43).text != "" && findViewById<TextView>(R.id.B51).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B43).text
+            findViewById<TextView>(R.id.B43).text = ""
+            findViewById<TextView>(R.id.B51).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B51).text != "" && findViewById<TextView>(R.id.B59).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B51).text
+            findViewById<TextView>(R.id.B51).text = ""
+            findViewById<TextView>(R.id.B59).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B59).text != "" && findViewById<TextView>(R.id.B67).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B59).text
+            findViewById<TextView>(R.id.B59).text = ""
+            findViewById<TextView>(R.id.B67).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B67).text != "" && findViewById<TextView>(R.id.B75).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B67).text
+            findViewById<TextView>(R.id.B67).text = ""
+            findViewById<TextView>(R.id.B75).text = B2Char
+        }
+        Thread.sleep(50)
+
+        return "";
+    }
+
+    fun autoDownCronJobB4(): String {
+        if (findViewById<TextView>(R.id.B4).text != "" && findViewById<TextView>(R.id.B12).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B4).text
+            findViewById<TextView>(R.id.B4).text = ""
+            findViewById<TextView>(R.id.B12).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B12).text != "" && findViewById<TextView>(R.id.B20).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B12).text
+            findViewById<TextView>(R.id.B12).text = ""
+            findViewById<TextView>(R.id.B20).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B20).text != "" && findViewById<TextView>(R.id.B28).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B20).text
+            findViewById<TextView>(R.id.B20).text = ""
+            findViewById<TextView>(R.id.B28).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B28).text != "" && findViewById<TextView>(R.id.B36).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B28).text
+            findViewById<TextView>(R.id.B28).text = ""
+            findViewById<TextView>(R.id.B36).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B36).text != "" && findViewById<TextView>(R.id.B44).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B36).text
+            findViewById<TextView>(R.id.B36).text = ""
+            findViewById<TextView>(R.id.B44).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B44).text != "" && findViewById<TextView>(R.id.B52).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B44).text
+            findViewById<TextView>(R.id.B44).text = ""
+            findViewById<TextView>(R.id.B52).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B52).text != "" && findViewById<TextView>(R.id.B60).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B52).text
+            findViewById<TextView>(R.id.B52).text = ""
+            findViewById<TextView>(R.id.B60).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B60).text != "" && findViewById<TextView>(R.id.B68).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B60).text
+            findViewById<TextView>(R.id.B60).text = ""
+            findViewById<TextView>(R.id.B68).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B68).text != "" && findViewById<TextView>(R.id.B76).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B68).text
+            findViewById<TextView>(R.id.B68).text = ""
+            findViewById<TextView>(R.id.B76).text = B2Char
+        }
+        Thread.sleep(50)
+
+
+        return "";
+    }
+
+    fun autoDownCronJobB5(): String {
+        if (findViewById<TextView>(R.id.B5).text != "" && findViewById<TextView>(R.id.B13).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B5).text
+            findViewById<TextView>(R.id.B5).text = ""
+            findViewById<TextView>(R.id.B13).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B13).text != "" && findViewById<TextView>(R.id.B21).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B13).text
+            findViewById<TextView>(R.id.B13).text = ""
+            findViewById<TextView>(R.id.B21).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B21).text != "" && findViewById<TextView>(R.id.B29).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B21).text
+            findViewById<TextView>(R.id.B21).text = ""
+            findViewById<TextView>(R.id.B29).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B29).text != "" && findViewById<TextView>(R.id.B37).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B29).text
+            findViewById<TextView>(R.id.B29).text = ""
+            findViewById<TextView>(R.id.B37).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B37).text != "" && findViewById<TextView>(R.id.B45).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B37).text
+            findViewById<TextView>(R.id.B37).text = ""
+            findViewById<TextView>(R.id.B45).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B45).text != "" && findViewById<TextView>(R.id.B53).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B45).text
+            findViewById<TextView>(R.id.B45).text = ""
+            findViewById<TextView>(R.id.B53).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B53).text != "" && findViewById<TextView>(R.id.B61).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B53).text
+            findViewById<TextView>(R.id.B53).text = ""
+            findViewById<TextView>(R.id.B61).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B61).text != "" && findViewById<TextView>(R.id.B69).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B61).text
+            findViewById<TextView>(R.id.B61).text = ""
+            findViewById<TextView>(R.id.B69).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B69).text != "" && findViewById<TextView>(R.id.B77).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B69).text
+            findViewById<TextView>(R.id.B69).text = ""
+            findViewById<TextView>(R.id.B77).text = B2Char
+        }
+        Thread.sleep(50)
+
+
+        return "";
+    }
+
+    fun autoDownCronJobB6(): String {
+        if (findViewById<TextView>(R.id.B6).text != "" && findViewById<TextView>(R.id.B14).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B6).text
+            findViewById<TextView>(R.id.B6).text = ""
+            findViewById<TextView>(R.id.B14).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B14).text != "" && findViewById<TextView>(R.id.B22).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B14).text
+            findViewById<TextView>(R.id.B14).text = ""
+            findViewById<TextView>(R.id.B22).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B22).text != "" && findViewById<TextView>(R.id.B30).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B22).text
+            findViewById<TextView>(R.id.B22).text = ""
+            findViewById<TextView>(R.id.B30).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B30).text != "" && findViewById<TextView>(R.id.B38).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B30).text
+            findViewById<TextView>(R.id.B30).text = ""
+            findViewById<TextView>(R.id.B38).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B38).text != "" && findViewById<TextView>(R.id.B46).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B38).text
+            findViewById<TextView>(R.id.B38).text = ""
+            findViewById<TextView>(R.id.B46).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B46).text != "" && findViewById<TextView>(R.id.B54).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B46).text
+            findViewById<TextView>(R.id.B46).text = ""
+            findViewById<TextView>(R.id.B54).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B54).text != "" && findViewById<TextView>(R.id.B62).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B54).text
+            findViewById<TextView>(R.id.B54).text = ""
+            findViewById<TextView>(R.id.B62).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B62).text != "" && findViewById<TextView>(R.id.B70).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B62).text
+            findViewById<TextView>(R.id.B62).text = ""
+            findViewById<TextView>(R.id.B70).text = B2Char
+        }
+        Thread.sleep(50)
+
+        if (findViewById<TextView>(R.id.B70).text != "" && findViewById<TextView>(R.id.B78).text == "") {
+            val B2Char = findViewById<TextView>(R.id.B70).text
+            findViewById<TextView>(R.id.B70).text = ""
+            findViewById<TextView>(R.id.B78).text = B2Char
+        }
+        Thread.sleep(50)
+
+
+        return "";
+    }
+
+    fun autoDownCronJobB7(): String {
+        if (findViewById<TextView>(R.id.B7).text != "" && findViewById<TextView>(R.id.B15).text == "") {
+            val B7Char = findViewById<TextView>(R.id.B7).text
+            findViewById<TextView>(R.id.B7).text = ""
+            findViewById<TextView>(R.id.B15).text = B7Char
+        }
+
+
+        return "";
+    }
+
+    fun autoDownCronJobB8(): String {
+        if (findViewById<TextView>(R.id.B8).text != "" && findViewById<TextView>(R.id.B16).text == "") {
+            val B8Char = findViewById<TextView>(R.id.B8).text
+            findViewById<TextView>(R.id.B8).text = ""
+            findViewById<TextView>(R.id.B16).text = B8Char
+        }
+
+
+        return "";
+    }
+
+
+    private fun isWordCorrect(searchWord: CharSequence): Any {
+        val inputStream: InputStream = assets.open("kelime_havuzu.txt")
+        val bufferedReader = BufferedReader(InputStreamReader(inputStream))
+        val inputString = bufferedReader.use { it.readText() }
+
+        if (inputString.contains(searchWord)) {
+
+            var scoreCounter = findViewById(R.id.scoreHolder) as TextView
+
+            calculateWordPoint(searchWord.toString());
+
+            scoreCounter.text = counter.toString()
+
+            return "Metin dosyası aranan kelimeyi içeriyor. " + searchWord;
+        } else {
+            return "Kelime mevcut değil.";
+        }
+
+        return false;
+    }
+
+    // fe'den harfler büyük geliyor textte küçük harfler var aşağıda büyük harfler var
+    private fun calculateWordPoint(searchWordChar: String) : String {
+
+        val valueOfChars = mapOf(
+            "A" to 1,
+            "B" to 3,
+            "C" to 4,
+            "Ç" to 4,
+            "D" to 3,
+            "E" to 1,
+            "F" to 7,
+            "G" to 5,
+            "Ğ" to 8,
+            "H" to 5,
+            "I" to 2,
+            "İ" to 1,
+            "J" to 10,
+            "K" to 1,
+            "L" to 1,
+            "M" to 2,
+            "N" to 1,
+            "O" to 2,
+            "Ö" to 7,
+            "P" to 5,
+            "R" to 1,
+            "S" to 2,
+            "Ş" to 4,
+            "T" to 1,
+            "U" to 2,
+            "Ü" to 3,
+            "V" to 7,
+            "Y" to 3,
+            "Z" to 4
+        )
+        for (char: Char in searchWordChar.toCharArray()) {
+            counter += valueOfChars[char.toString()]!!
+        }
+
+        return "";
+    }
+
+    var nextUp: Int = 0
     var starting = 0
     var num1 = 0
     var num2 = 0
@@ -41,9 +579,10 @@ class Game : AppCompatActivity() {
 
     fun randomChar(): Char {
         val chars = "ABCÇDEFGHIİJKLMNOÖPRSŞTUÜVYZ"
-        val index = (0..chars.length-1).random()
+        val index = (0..chars.length - 1).random()
         return chars[index]
     }
+
     private fun onClicks() {
         val editText = findViewById<EditText>(R.id.edit_text)
         val b1 = findViewById<TextView>(R.id.B1)
@@ -127,7 +666,88 @@ class Game : AppCompatActivity() {
         val b79 = findViewById<TextView>(R.id.B79)
         val b80 = findViewById<TextView>(R.id.B80)
 
-        val buttons = arrayOf(b1, b2, b3, b4, b5, b6, b7, b8, b9, b10,b11,b12,b13,b14,b15,b16,b17,b18,b19,b20,b21,b22,b23,b24,b25,b26,b27,b28,b29,b30,b31,b32,b33,b34,b35,b36,b37,b38,b39,b40,b41,b42,b43,b44,b45,b46,b47,b48,b49,b50,b51,b52,b53,b54,b55,b56,b57,b58,b59, b60, b61, b62, b63, b64, b65, b66, b67, b68, b69, b70, b71, b72, b73, b74, b75, b76, b77, b78, b79, b80)
+        val buttons = arrayOf(
+            b1,
+            b2,
+            b3,
+            b4,
+            b5,
+            b6,
+            b7,
+            b8,
+            b9,
+            b10,
+            b11,
+            b12,
+            b13,
+            b14,
+            b15,
+            b16,
+            b17,
+            b18,
+            b19,
+            b20,
+            b21,
+            b22,
+            b23,
+            b24,
+            b25,
+            b26,
+            b27,
+            b28,
+            b29,
+            b30,
+            b31,
+            b32,
+            b33,
+            b34,
+            b35,
+            b36,
+            b37,
+            b38,
+            b39,
+            b40,
+            b41,
+            b42,
+            b43,
+            b44,
+            b45,
+            b46,
+            b47,
+            b48,
+            b49,
+            b50,
+            b51,
+            b52,
+            b53,
+            b54,
+            b55,
+            b56,
+            b57,
+            b58,
+            b59,
+            b60,
+            b61,
+            b62,
+            b63,
+            b64,
+            b65,
+            b66,
+            b67,
+            b68,
+            b69,
+            b70,
+            b71,
+            b72,
+            b73,
+            b74,
+            b75,
+            b76,
+            b77,
+            b78,
+            b79,
+            b80
+        )
 
         for (button in buttons) {
             button.setOnClickListener {
@@ -139,28 +759,115 @@ class Game : AppCompatActivity() {
     }
 
 
-    private fun next_shape(){
-        findViewById<TextView>(R.id.B1).text = randomChar().toString();findViewById<TextView>(R.id.B2).text = randomChar().toString();findViewById<TextView>(R.id.B3).text = randomChar().toString();findViewById<TextView>(R.id.B4).text = randomChar().toString();findViewById<TextView>(R.id.B5).text = randomChar().toString();findViewById<TextView>(R.id.B6).text = randomChar().toString();findViewById<TextView>(R.id.B7).text = randomChar().toString();findViewById<TextView>(R.id.B8).text = randomChar().toString();
-        findViewById<TextView>(R.id.B9).text = randomChar().toString();findViewById<TextView>(R.id.B10).text = randomChar().toString();findViewById<TextView>(R.id.B11).text = randomChar().toString();findViewById<TextView>(R.id.B12).text = randomChar().toString();findViewById<TextView>(R.id.B13).text = randomChar().toString();findViewById<TextView>(R.id.B14).text = randomChar().toString();findViewById<TextView>(R.id.B15).text = randomChar().toString();findViewById<TextView>(R.id.B16).text = randomChar().toString();
-        findViewById<TextView>(R.id.B17).text = randomChar().toString();findViewById<TextView>(R.id.B18).text = randomChar().toString();findViewById<TextView>(R.id.B19).text = randomChar().toString();findViewById<TextView>(R.id.B20).text = randomChar().toString();findViewById<TextView>(R.id.B21).text = randomChar().toString();findViewById<TextView>(R.id.B22).text = randomChar().toString();findViewById<TextView>(R.id.B23).text = randomChar().toString();findViewById<TextView>(R.id.B24).text = randomChar().toString();
-        findViewById<TextView>(R.id.B1).text = randomChar().toString();findViewById<TextView>(R.id.B2).text = randomChar().toString();findViewById<TextView>(R.id.B3).text = randomChar().toString();findViewById<TextView>(R.id.B4).text = randomChar().toString();findViewById<TextView>(R.id.B5).text = randomChar().toString();findViewById<TextView>(R.id.B6).text = randomChar().toString();findViewById<TextView>(R.id.B7).text = randomChar().toString();findViewById<TextView>(R.id.B8).text = randomChar().toString();
-        findViewById<TextView>(R.id.B9).text = randomChar().toString();findViewById<TextView>(R.id.B10).text = randomChar().toString();findViewById<TextView>(R.id.B11).text = randomChar().toString();findViewById<TextView>(R.id.B12).text = randomChar().toString();findViewById<TextView>(R.id.B13).text = randomChar().toString();findViewById<TextView>(R.id.B14).text = randomChar().toString();findViewById<TextView>(R.id.B15).text = randomChar().toString();findViewById<TextView>(R.id.B16).text = randomChar().toString();
-        findViewById<TextView>(R.id.B17).text = randomChar().toString();findViewById<TextView>(R.id.B18).text = randomChar().toString();findViewById<TextView>(R.id.B19).text = randomChar().toString();findViewById<TextView>(R.id.B20).text = randomChar().toString();findViewById<TextView>(R.id.B21).text = randomChar().toString();findViewById<TextView>(R.id.B22).text = randomChar().toString();findViewById<TextView>(R.id.B23).text = randomChar().toString();findViewById<TextView>(R.id.B24).text = randomChar().toString();
-        findViewById<TextView>(R.id.B1).text = randomChar().toString();findViewById<TextView>(R.id.B2).text = randomChar().toString();findViewById<TextView>(R.id.B3).text = randomChar().toString();findViewById<TextView>(R.id.B4).text = randomChar().toString();findViewById<TextView>(R.id.B5).text = randomChar().toString();findViewById<TextView>(R.id.B6).text = randomChar().toString();findViewById<TextView>(R.id.B7).text = randomChar().toString();findViewById<TextView>(R.id.B8).text = randomChar().toString();
-        findViewById<TextView>(R.id.B9).text = randomChar().toString();findViewById<TextView>(R.id.B10).text = randomChar().toString();findViewById<TextView>(R.id.B11).text = randomChar().toString();findViewById<TextView>(R.id.B12).text = randomChar().toString();findViewById<TextView>(R.id.B13).text = randomChar().toString();findViewById<TextView>(R.id.B14).text = randomChar().toString();findViewById<TextView>(R.id.B15).text = randomChar().toString();findViewById<TextView>(R.id.B16).text = randomChar().toString();
-        findViewById<TextView>(R.id.B17).text = randomChar().toString();findViewById<TextView>(R.id.B18).text = randomChar().toString();findViewById<TextView>(R.id.B19).text = randomChar().toString();findViewById<TextView>(R.id.B20).text = randomChar().toString();findViewById<TextView>(R.id.B21).text = randomChar().toString();findViewById<TextView>(R.id.B22).text = randomChar().toString();findViewById<TextView>(R.id.B23).text = randomChar().toString();findViewById<TextView>(R.id.B24).text = randomChar().toString();
+    private fun next_shape() {
+        findViewById<TextView>(R.id.B1).text = randomChar().toString();
+        findViewById<TextView>(R.id.B2).text = randomChar().toString();
+        findViewById<TextView>(R.id.B3).text = randomChar().toString();
+        findViewById<TextView>(R.id.B4).text = randomChar().toString();
+        findViewById<TextView>(R.id.B5).text = randomChar().toString();
+        findViewById<TextView>(R.id.B6).text = randomChar().toString();
+        findViewById<TextView>(R.id.B7).text = randomChar().toString();
+        findViewById<TextView>(R.id.B8).text = randomChar().toString();
+        findViewById<TextView>(R.id.B9).text = randomChar().toString();
+        findViewById<TextView>(R.id.B10).text = randomChar().toString();
+        findViewById<TextView>(R.id.B11).text = randomChar().toString();
+        findViewById<TextView>(R.id.B12).text = randomChar().toString();
+        findViewById<TextView>(R.id.B13).text = randomChar().toString();
+        findViewById<TextView>(R.id.B14).text = randomChar().toString();
+        findViewById<TextView>(R.id.B15).text = randomChar().toString();
+        findViewById<TextView>(R.id.B16).text = randomChar().toString();
+        findViewById<TextView>(R.id.B17).text = randomChar().toString();
+        findViewById<TextView>(R.id.B18).text = randomChar().toString();
+        findViewById<TextView>(R.id.B19).text = randomChar().toString();
+        findViewById<TextView>(R.id.B20).text = randomChar().toString();
+        findViewById<TextView>(R.id.B21).text = randomChar().toString();
+        findViewById<TextView>(R.id.B22).text = randomChar().toString();
+        findViewById<TextView>(R.id.B23).text = randomChar().toString();
+        findViewById<TextView>(R.id.B24).text = randomChar().toString();
+        findViewById<TextView>(R.id.B1).text = randomChar().toString();
+        findViewById<TextView>(R.id.B2).text = randomChar().toString();
+        findViewById<TextView>(R.id.B3).text = randomChar().toString();
+        findViewById<TextView>(R.id.B4).text = randomChar().toString();
+        findViewById<TextView>(R.id.B5).text = randomChar().toString();
+        findViewById<TextView>(R.id.B6).text = randomChar().toString();
+        findViewById<TextView>(R.id.B7).text = randomChar().toString();
+        findViewById<TextView>(R.id.B8).text = randomChar().toString();
+        findViewById<TextView>(R.id.B9).text = randomChar().toString();
+        findViewById<TextView>(R.id.B10).text = randomChar().toString();
+        findViewById<TextView>(R.id.B11).text = randomChar().toString();
+        findViewById<TextView>(R.id.B12).text = randomChar().toString();
+        findViewById<TextView>(R.id.B13).text = randomChar().toString();
+        findViewById<TextView>(R.id.B14).text = randomChar().toString();
+        findViewById<TextView>(R.id.B15).text = randomChar().toString();
+        findViewById<TextView>(R.id.B16).text = randomChar().toString();
+        findViewById<TextView>(R.id.B17).text = randomChar().toString();
+        findViewById<TextView>(R.id.B18).text = randomChar().toString();
+        findViewById<TextView>(R.id.B19).text = randomChar().toString();
+        findViewById<TextView>(R.id.B20).text = randomChar().toString();
+        findViewById<TextView>(R.id.B21).text = randomChar().toString();
+        findViewById<TextView>(R.id.B22).text = randomChar().toString();
+        findViewById<TextView>(R.id.B23).text = randomChar().toString();
+        findViewById<TextView>(R.id.B24).text = randomChar().toString();
+        findViewById<TextView>(R.id.B1).text = randomChar().toString();
+        findViewById<TextView>(R.id.B2).text = randomChar().toString();
+        findViewById<TextView>(R.id.B3).text = randomChar().toString();
+        findViewById<TextView>(R.id.B4).text = randomChar().toString();
+        findViewById<TextView>(R.id.B5).text = randomChar().toString();
+        findViewById<TextView>(R.id.B6).text = randomChar().toString();
+        findViewById<TextView>(R.id.B7).text = randomChar().toString();
+        findViewById<TextView>(R.id.B8).text = randomChar().toString();
+        findViewById<TextView>(R.id.B9).text = randomChar().toString();
+        findViewById<TextView>(R.id.B10).text = randomChar().toString();
+        findViewById<TextView>(R.id.B11).text = randomChar().toString();
+        findViewById<TextView>(R.id.B12).text = randomChar().toString();
+        findViewById<TextView>(R.id.B13).text = randomChar().toString();
+        findViewById<TextView>(R.id.B14).text = randomChar().toString();
+        findViewById<TextView>(R.id.B15).text = randomChar().toString();
+        findViewById<TextView>(R.id.B16).text = randomChar().toString();
+        findViewById<TextView>(R.id.B17).text = randomChar().toString();
+        findViewById<TextView>(R.id.B18).text = randomChar().toString();
+        findViewById<TextView>(R.id.B19).text = randomChar().toString();
+        findViewById<TextView>(R.id.B20).text = randomChar().toString();
+        findViewById<TextView>(R.id.B21).text = randomChar().toString();
+        findViewById<TextView>(R.id.B22).text = randomChar().toString();
+        findViewById<TextView>(R.id.B23).text = randomChar().toString();
+        findViewById<TextView>(R.id.B24).text = randomChar().toString();
 
+        //üç kez anlamsız girilince cart curt
         val random = Random.nextInt(1..8)
-        when(random){
+        when (random) {
 
-            1 -> {findViewById<TextView>(R.id.B1).text = randomChar().toString()}
-            2 -> {findViewById<TextView>(R.id.B2).text = randomChar().toString()}
-            3 -> {findViewById<TextView>(R.id.B3).text = randomChar().toString()}
-            4 -> {findViewById<TextView>(R.id.B4).text = randomChar().toString()}
-            5 -> {findViewById<TextView>(R.id.B5).text = randomChar().toString()}
-            6 -> {findViewById<TextView>(R.id.B6).text = randomChar().toString()}
-            7 -> {findViewById<TextView>(R.id.B7).text = randomChar().toString()}
-            8 -> {findViewById<TextView>(R.id.B8).text = randomChar().toString()}
+            1 -> {
+                findViewById<TextView>(R.id.B1).text = randomChar().toString()
+            }
+
+            2 -> {
+                findViewById<TextView>(R.id.B2).text = randomChar().toString()
+            }
+
+            3 -> {
+                findViewById<TextView>(R.id.B3).text = randomChar().toString()
+            }
+
+            4 -> {
+                findViewById<TextView>(R.id.B4).text = randomChar().toString()
+            }
+
+            5 -> {
+                findViewById<TextView>(R.id.B5).text = randomChar().toString()
+            }
+
+            6 -> {
+                findViewById<TextView>(R.id.B6).text = randomChar().toString()
+            }
+
+            7 -> {
+                findViewById<TextView>(R.id.B7).text = randomChar().toString()
+            }
+
+            8 -> {
+                findViewById<TextView>(R.id.B8).text = randomChar().toString()
+            }
         }
 
     }
