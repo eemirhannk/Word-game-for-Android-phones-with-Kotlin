@@ -1,14 +1,18 @@
 package com.example.yazlab2_2
 
+import android.graphics.Color
+import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import android.view.MotionEvent
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
+import android.widget.GridLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
@@ -74,6 +78,17 @@ class Game : AppCompatActivity() {
             var edit_text = (findViewById<View>(R.id.edit_text)) as TextView
             var isWordCorrectResult = isWordCorrect(edit_text.text)
         }
+        val secondClickedButton = findViewById(R.id.wrongTextView) as Button
+        secondClickedButton.setOnClickListener {
+            var edit_text = (findViewById<View>(R.id.edit_text)) as TextView
+            edit_text.text = ""
+        }
+        val startColor = Color.BLACK
+        val endColor = Color.GRAY
+
+        val gradientDrawable = GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, intArrayOf(startColor, endColor))
+        window.decorView.background = gradientDrawable
+
 
     }
 
@@ -82,7 +97,7 @@ class Game : AppCompatActivity() {
         val handler = Handler()
         val runnable = object : Runnable {
             override fun run() {
-                val random = Random.nextInt(1..8)
+                val random = Random.nextInt(1..16)
                 when (random) {
 
                     1 -> {
@@ -119,7 +134,7 @@ class Game : AppCompatActivity() {
                 }
                 // Fonksiyonun yapması gereken işlemler burada yer alır
 
-                handler.postDelayed(this, 15000) // 5 saniye sonra tekrar çağır
+                handler.postDelayed(this, 5000) // 5 saniye sonra tekrar çağır
             }
         }
 
@@ -135,63 +150,63 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B1).text = ""
             findViewById<TextView>(R.id.B9).text = B1Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B9).text != "" && findViewById<TextView>(R.id.B17).text == "") {
             val B9Char = findViewById<TextView>(R.id.B9).text
             findViewById<TextView>(R.id.B9).text = ""
             findViewById<TextView>(R.id.B17).text = B9Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B17).text != "" && findViewById<TextView>(R.id.B25).text == "") {
             val B17Char = findViewById<TextView>(R.id.B17).text
             findViewById<TextView>(R.id.B17).text = ""
             findViewById<TextView>(R.id.B25).text = B17Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B25).text != "" && findViewById<TextView>(R.id.B33).text == "") {
             val B25Char = findViewById<TextView>(R.id.B25).text
             findViewById<TextView>(R.id.B25).text = ""
             findViewById<TextView>(R.id.B33).text = B25Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B33).text != "" && findViewById<TextView>(R.id.B41).text == "") {
             val B25Char = findViewById<TextView>(R.id.B33).text
             findViewById<TextView>(R.id.B33).text = ""
             findViewById<TextView>(R.id.B41).text = B25Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B41).text != "" && findViewById<TextView>(R.id.B49).text == "") {
             val B25Char = findViewById<TextView>(R.id.B41).text
             findViewById<TextView>(R.id.B41).text = ""
             findViewById<TextView>(R.id.B49).text = B25Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B49).text != "" && findViewById<TextView>(R.id.B57).text == "") {
             val B25Char = findViewById<TextView>(R.id.B49).text
             findViewById<TextView>(R.id.B49).text = ""
             findViewById<TextView>(R.id.B57).text = B25Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B57).text != "" && findViewById<TextView>(R.id.B65).text == "") {
             val B25Char = findViewById<TextView>(R.id.B57).text
             findViewById<TextView>(R.id.B57).text = ""
             findViewById<TextView>(R.id.B65).text = B25Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B65).text != "" && findViewById<TextView>(R.id.B73).text == "") {
             val B25Char = findViewById<TextView>(R.id.B65).text
             findViewById<TextView>(R.id.B65).text = ""
             findViewById<TextView>(R.id.B73).text = B25Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         return "";
     }
@@ -202,63 +217,63 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B2).text = ""
             findViewById<TextView>(R.id.B10).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B10).text != "" && findViewById<TextView>(R.id.B18).text == "") {
             val B2Char = findViewById<TextView>(R.id.B10).text
             findViewById<TextView>(R.id.B10).text = ""
             findViewById<TextView>(R.id.B18).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B18).text != "" && findViewById<TextView>(R.id.B26).text == "") {
             val B2Char = findViewById<TextView>(R.id.B18).text
             findViewById<TextView>(R.id.B18).text = ""
             findViewById<TextView>(R.id.B26).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B26).text != "" && findViewById<TextView>(R.id.B34).text == "") {
             val B2Char = findViewById<TextView>(R.id.B26).text
             findViewById<TextView>(R.id.B26).text = ""
             findViewById<TextView>(R.id.B34).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B34).text != "" && findViewById<TextView>(R.id.B42).text == "") {
             val B2Char = findViewById<TextView>(R.id.B34).text
             findViewById<TextView>(R.id.B34).text = ""
             findViewById<TextView>(R.id.B42).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B42).text != "" && findViewById<TextView>(R.id.B50).text == "") {
             val B2Char = findViewById<TextView>(R.id.B42).text
             findViewById<TextView>(R.id.B42).text = ""
             findViewById<TextView>(R.id.B50).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B50).text != "" && findViewById<TextView>(R.id.B58).text == "") {
             val B2Char = findViewById<TextView>(R.id.B50).text
             findViewById<TextView>(R.id.B50).text = ""
             findViewById<TextView>(R.id.B58).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B58).text != "" && findViewById<TextView>(R.id.B66).text == "") {
             val B2Char = findViewById<TextView>(R.id.B58).text
             findViewById<TextView>(R.id.B58).text = ""
             findViewById<TextView>(R.id.B66).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B66).text != "" && findViewById<TextView>(R.id.B74).text == "") {
             val B2Char = findViewById<TextView>(R.id.B66).text
             findViewById<TextView>(R.id.B66).text = ""
             findViewById<TextView>(R.id.B74).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         return "";
     }
 
@@ -268,63 +283,63 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B3).text = ""
             findViewById<TextView>(R.id.B11).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B11).text != "" && findViewById<TextView>(R.id.B19).text == "") {
             val B2Char = findViewById<TextView>(R.id.B11).text
             findViewById<TextView>(R.id.B11).text = ""
             findViewById<TextView>(R.id.B19).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B19).text != "" && findViewById<TextView>(R.id.B27).text == "") {
             val B2Char = findViewById<TextView>(R.id.B19).text
             findViewById<TextView>(R.id.B19).text = ""
             findViewById<TextView>(R.id.B27).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B27).text != "" && findViewById<TextView>(R.id.B35).text == "") {
             val B2Char = findViewById<TextView>(R.id.B27).text
             findViewById<TextView>(R.id.B27).text = ""
             findViewById<TextView>(R.id.B35).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B35).text != "" && findViewById<TextView>(R.id.B43).text == "") {
             val B2Char = findViewById<TextView>(R.id.B35).text
             findViewById<TextView>(R.id.B35).text = ""
             findViewById<TextView>(R.id.B43).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B43).text != "" && findViewById<TextView>(R.id.B51).text == "") {
             val B2Char = findViewById<TextView>(R.id.B43).text
             findViewById<TextView>(R.id.B43).text = ""
             findViewById<TextView>(R.id.B51).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B51).text != "" && findViewById<TextView>(R.id.B59).text == "") {
             val B2Char = findViewById<TextView>(R.id.B51).text
             findViewById<TextView>(R.id.B51).text = ""
             findViewById<TextView>(R.id.B59).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B59).text != "" && findViewById<TextView>(R.id.B67).text == "") {
             val B2Char = findViewById<TextView>(R.id.B59).text
             findViewById<TextView>(R.id.B59).text = ""
             findViewById<TextView>(R.id.B67).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B67).text != "" && findViewById<TextView>(R.id.B75).text == "") {
             val B2Char = findViewById<TextView>(R.id.B67).text
             findViewById<TextView>(R.id.B67).text = ""
             findViewById<TextView>(R.id.B75).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         return "";
     }
@@ -335,63 +350,63 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B4).text = ""
             findViewById<TextView>(R.id.B12).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B12).text != "" && findViewById<TextView>(R.id.B20).text == "") {
             val B2Char = findViewById<TextView>(R.id.B12).text
             findViewById<TextView>(R.id.B12).text = ""
             findViewById<TextView>(R.id.B20).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B20).text != "" && findViewById<TextView>(R.id.B28).text == "") {
             val B2Char = findViewById<TextView>(R.id.B20).text
             findViewById<TextView>(R.id.B20).text = ""
             findViewById<TextView>(R.id.B28).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B28).text != "" && findViewById<TextView>(R.id.B36).text == "") {
             val B2Char = findViewById<TextView>(R.id.B28).text
             findViewById<TextView>(R.id.B28).text = ""
             findViewById<TextView>(R.id.B36).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B36).text != "" && findViewById<TextView>(R.id.B44).text == "") {
             val B2Char = findViewById<TextView>(R.id.B36).text
             findViewById<TextView>(R.id.B36).text = ""
             findViewById<TextView>(R.id.B44).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B44).text != "" && findViewById<TextView>(R.id.B52).text == "") {
             val B2Char = findViewById<TextView>(R.id.B44).text
             findViewById<TextView>(R.id.B44).text = ""
             findViewById<TextView>(R.id.B52).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B52).text != "" && findViewById<TextView>(R.id.B60).text == "") {
             val B2Char = findViewById<TextView>(R.id.B52).text
             findViewById<TextView>(R.id.B52).text = ""
             findViewById<TextView>(R.id.B60).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B60).text != "" && findViewById<TextView>(R.id.B68).text == "") {
             val B2Char = findViewById<TextView>(R.id.B60).text
             findViewById<TextView>(R.id.B60).text = ""
             findViewById<TextView>(R.id.B68).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B68).text != "" && findViewById<TextView>(R.id.B76).text == "") {
             val B2Char = findViewById<TextView>(R.id.B68).text
             findViewById<TextView>(R.id.B68).text = ""
             findViewById<TextView>(R.id.B76).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
 
         return "";
@@ -403,63 +418,63 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B5).text = ""
             findViewById<TextView>(R.id.B13).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B13).text != "" && findViewById<TextView>(R.id.B21).text == "") {
             val B2Char = findViewById<TextView>(R.id.B13).text
             findViewById<TextView>(R.id.B13).text = ""
             findViewById<TextView>(R.id.B21).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B21).text != "" && findViewById<TextView>(R.id.B29).text == "") {
             val B2Char = findViewById<TextView>(R.id.B21).text
             findViewById<TextView>(R.id.B21).text = ""
             findViewById<TextView>(R.id.B29).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B29).text != "" && findViewById<TextView>(R.id.B37).text == "") {
             val B2Char = findViewById<TextView>(R.id.B29).text
             findViewById<TextView>(R.id.B29).text = ""
             findViewById<TextView>(R.id.B37).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B37).text != "" && findViewById<TextView>(R.id.B45).text == "") {
             val B2Char = findViewById<TextView>(R.id.B37).text
             findViewById<TextView>(R.id.B37).text = ""
             findViewById<TextView>(R.id.B45).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B45).text != "" && findViewById<TextView>(R.id.B53).text == "") {
             val B2Char = findViewById<TextView>(R.id.B45).text
             findViewById<TextView>(R.id.B45).text = ""
             findViewById<TextView>(R.id.B53).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B53).text != "" && findViewById<TextView>(R.id.B61).text == "") {
             val B2Char = findViewById<TextView>(R.id.B53).text
             findViewById<TextView>(R.id.B53).text = ""
             findViewById<TextView>(R.id.B61).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B61).text != "" && findViewById<TextView>(R.id.B69).text == "") {
             val B2Char = findViewById<TextView>(R.id.B61).text
             findViewById<TextView>(R.id.B61).text = ""
             findViewById<TextView>(R.id.B69).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B69).text != "" && findViewById<TextView>(R.id.B77).text == "") {
             val B2Char = findViewById<TextView>(R.id.B69).text
             findViewById<TextView>(R.id.B69).text = ""
             findViewById<TextView>(R.id.B77).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
 
         return "";
@@ -471,63 +486,63 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B6).text = ""
             findViewById<TextView>(R.id.B14).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B14).text != "" && findViewById<TextView>(R.id.B22).text == "") {
             val B2Char = findViewById<TextView>(R.id.B14).text
             findViewById<TextView>(R.id.B14).text = ""
             findViewById<TextView>(R.id.B22).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B22).text != "" && findViewById<TextView>(R.id.B30).text == "") {
             val B2Char = findViewById<TextView>(R.id.B22).text
             findViewById<TextView>(R.id.B22).text = ""
             findViewById<TextView>(R.id.B30).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B30).text != "" && findViewById<TextView>(R.id.B38).text == "") {
             val B2Char = findViewById<TextView>(R.id.B30).text
             findViewById<TextView>(R.id.B30).text = ""
             findViewById<TextView>(R.id.B38).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B38).text != "" && findViewById<TextView>(R.id.B46).text == "") {
             val B2Char = findViewById<TextView>(R.id.B38).text
             findViewById<TextView>(R.id.B38).text = ""
             findViewById<TextView>(R.id.B46).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B46).text != "" && findViewById<TextView>(R.id.B54).text == "") {
             val B2Char = findViewById<TextView>(R.id.B46).text
             findViewById<TextView>(R.id.B46).text = ""
             findViewById<TextView>(R.id.B54).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B54).text != "" && findViewById<TextView>(R.id.B62).text == "") {
             val B2Char = findViewById<TextView>(R.id.B54).text
             findViewById<TextView>(R.id.B54).text = ""
             findViewById<TextView>(R.id.B62).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B62).text != "" && findViewById<TextView>(R.id.B70).text == "") {
             val B2Char = findViewById<TextView>(R.id.B62).text
             findViewById<TextView>(R.id.B62).text = ""
             findViewById<TextView>(R.id.B70).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
         if (findViewById<TextView>(R.id.B70).text != "" && findViewById<TextView>(R.id.B78).text == "") {
             val B2Char = findViewById<TextView>(R.id.B70).text
             findViewById<TextView>(R.id.B70).text = ""
             findViewById<TextView>(R.id.B78).text = B2Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
 
         return "";
@@ -539,55 +554,55 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B7).text = ""
             findViewById<TextView>(R.id.B15).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if(findViewById<TextView>(R.id.B15).text != "" && findViewById<TextView>(R.id.B23).text == ""){
             val B7Char = findViewById<TextView>(R.id.B15).text
             findViewById<TextView>(R.id.B15).text = ""
             findViewById<TextView>(R.id.B23).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B23).text != "" && findViewById<TextView>(R.id.B31).text == "") {
             val B7Char = findViewById<TextView>(R.id.B23).text
             findViewById<TextView>(R.id.B23).text = ""
             findViewById<TextView>(R.id.B31).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if(findViewById<TextView>(R.id.B31).text != "" && findViewById<TextView>(R.id.B39).text == ""){
             val B7Char = findViewById<TextView>(R.id.B31).text
             findViewById<TextView>(R.id.B31).text = ""
             findViewById<TextView>(R.id.B39).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B39).text != "" && findViewById<TextView>(R.id.B47).text == "") {
             val B7Char = findViewById<TextView>(R.id.B39).text
             findViewById<TextView>(R.id.B39).text = ""
             findViewById<TextView>(R.id.B47).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if(findViewById<TextView>(R.id.B47).text != "" && findViewById<TextView>(R.id.B55).text == ""){
             val B7Char = findViewById<TextView>(R.id.B47).text
             findViewById<TextView>(R.id.B47).text = ""
             findViewById<TextView>(R.id.B55).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if(findViewById<TextView>(R.id.B55).text != "" && findViewById<TextView>(R.id.B63).text == ""){
             val B7Char = findViewById<TextView>(R.id.B55).text
             findViewById<TextView>(R.id.B55).text = ""
             findViewById<TextView>(R.id.B63).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B63).text != "" && findViewById<TextView>(R.id.B71).text == "") {
             val B7Char = findViewById<TextView>(R.id.B63).text
             findViewById<TextView>(R.id.B63).text = ""
             findViewById<TextView>(R.id.B71).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if(findViewById<TextView>(R.id.B71).text != "" && findViewById<TextView>(R.id.B79).text == ""){
             val B7Char = findViewById<TextView>(R.id.B71).text
             findViewById<TextView>(R.id.B71).text = ""
             findViewById<TextView>(R.id.B79).text = B7Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
 
 
@@ -600,55 +615,55 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B8).text = ""
             findViewById<TextView>(R.id.B16).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B16).text != "" && findViewById<TextView>(R.id.B24).text == "") {
             val B8Char = findViewById<TextView>(R.id.B16).text
             findViewById<TextView>(R.id.B16).text = ""
             findViewById<TextView>(R.id.B24).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B24).text != "" && findViewById<TextView>(R.id.B32).text == "") {
             val B8Char = findViewById<TextView>(R.id.B24).text
             findViewById<TextView>(R.id.B24).text = ""
             findViewById<TextView>(R.id.B32).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B32).text != "" && findViewById<TextView>(R.id.B40).text == "") {
             val B8Char = findViewById<TextView>(R.id.B32).text
             findViewById<TextView>(R.id.B32).text = ""
             findViewById<TextView>(R.id.B40).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B40).text != "" && findViewById<TextView>(R.id.B48).text == "") {
             val B8Char = findViewById<TextView>(R.id.B40).text
             findViewById<TextView>(R.id.B40).text = ""
             findViewById<TextView>(R.id.B48).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B48).text != "" && findViewById<TextView>(R.id.B56).text == "") {
             val B8Char = findViewById<TextView>(R.id.B48).text
             findViewById<TextView>(R.id.B48).text = ""
             findViewById<TextView>(R.id.B56).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B56).text != "" && findViewById<TextView>(R.id.B64).text == "") {
             val B8Char = findViewById<TextView>(R.id.B56).text
             findViewById<TextView>(R.id.B56).text = ""
             findViewById<TextView>(R.id.B64).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B64).text != "" && findViewById<TextView>(R.id.B72).text == "") {
             val B8Char = findViewById<TextView>(R.id.B64).text
             findViewById<TextView>(R.id.B64).text = ""
             findViewById<TextView>(R.id.B72).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
         if (findViewById<TextView>(R.id.B72).text != "" && findViewById<TextView>(R.id.B80).text == "") {
             val B8Char = findViewById<TextView>(R.id.B72).text
             findViewById<TextView>(R.id.B72).text = ""
             findViewById<TextView>(R.id.B80).text = B8Char
         }
-        Thread.sleep(50)
+        Thread.sleep(40)
 
 
         return "";
@@ -659,6 +674,7 @@ class Game : AppCompatActivity() {
         val inputStream: InputStream = assets.open("kelime_havuzu.txt")
         val bufferedReader = BufferedReader(InputStreamReader(inputStream))
         val inputString = bufferedReader.use { it.readText() }
+        var sayac = 0
 
         if (inputString.contains(searchWord)) {
 
@@ -670,13 +686,26 @@ class Game : AppCompatActivity() {
 
             return "Metin dosyası aranan kelimeyi içeriyor. " + searchWord;
         } else {
-            return "Kelime mevcut değil.";
+            // sayaç 1 de kalıyor artmıyor kafam almadı çözemedim
+            sayac += 1
+            println(sayac)
+        }
+        if(sayac == 3){
+                autoDownCronJobB1()
+                autoDownCronJobB1()
+                autoDownCronJobB2()
+                autoDownCronJobB3()
+                autoDownCronJobB4()
+                autoDownCronJobB5()
+                autoDownCronJobB6()
+                autoDownCronJobB7()
+                autoDownCronJobB8()
         }
 
         return false;
     }
 
-    // fe'den harfler büyük geliyor textte küçük harfler var aşağıda büyük harfler var
+    // fe'den harfler büyük geliyor textte küçük harfler var aşağıda büyük harfler var  ayarladım küçük harf girişi iptal
     private fun calculateWordPoint(searchWordChar: String) : String {
 
         val valueOfChars = mapOf(
