@@ -30,6 +30,7 @@ import kotlin.concurrent.timerTask
 
 class Game : AppCompatActivity() {
     var counter = 0;
+    var sayac = 0
 
 
     //otomatik düsme icin tanımlanmıs bir cronjobın yöneticisi
@@ -84,7 +85,7 @@ class Game : AppCompatActivity() {
             edit_text.text = ""
         }
         val startColor = Color.BLACK
-        val endColor = Color.GRAY
+        val endColor = Color.BLUE
 
         val gradientDrawable = GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, intArrayOf(startColor, endColor))
         window.decorView.background = gradientDrawable
@@ -674,7 +675,6 @@ class Game : AppCompatActivity() {
         val inputStream: InputStream = assets.open("kelime_havuzu.txt")
         val bufferedReader = BufferedReader(InputStreamReader(inputStream))
         val inputString = bufferedReader.use { it.readText() }
-        var sayac = 0
 
         if (inputString.contains(searchWord)) {
 
@@ -686,20 +686,20 @@ class Game : AppCompatActivity() {
 
             return "Metin dosyası aranan kelimeyi içeriyor. " + searchWord;
         } else {
-            // sayaç 1 de kalıyor artmıyor kafam almadı çözemedim
+            // sayaç 1 de kalıyor artmıyor kafam almadı çözemedim çözdüm
             sayac += 1
             println(sayac)
         }
         if(sayac == 3){
-                autoDownCronJobB1()
-                autoDownCronJobB1()
-                autoDownCronJobB2()
-                autoDownCronJobB3()
-                autoDownCronJobB4()
-                autoDownCronJobB5()
-                autoDownCronJobB6()
-                autoDownCronJobB7()
-                autoDownCronJobB8()
+                findViewById<TextView>(R.id.B1).text = randomChar().toString();
+                findViewById<TextView>(R.id.B2).text = randomChar().toString();
+                findViewById<TextView>(R.id.B3).text = randomChar().toString();
+                findViewById<TextView>(R.id.B4).text = randomChar().toString();
+                findViewById<TextView>(R.id.B5).text = randomChar().toString();
+                findViewById<TextView>(R.id.B6).text = randomChar().toString();
+                findViewById<TextView>(R.id.B7).text = randomChar().toString();
+                findViewById<TextView>(R.id.B8).text = randomChar().toString();
+                sayac = 0
         }
 
         return false;
