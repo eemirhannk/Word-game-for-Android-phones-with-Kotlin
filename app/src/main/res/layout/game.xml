@@ -61,6 +61,7 @@
             android:textColor="@color/white"
             android:fontFamily="sans-serif-medium"
             android:layout_column="1"
+            android:gravity="center"
             android:background="@drawable/border_background"
             android:hint=""
             tools:ignore="LabelFor,SpeakableTextPresentCheck"
@@ -75,9 +76,9 @@
             android:layout_column="2"
             android:gravity="center"
             android:text="✓"
+            android:textColor="#0ef"
             android:textSize="33sp"
             android:textStyle="bold"
-            android:textColor="#0ef"
             app:cornerRadius="20dp"
             tools:ignore="HardcodedText" />
     </GridLayout>

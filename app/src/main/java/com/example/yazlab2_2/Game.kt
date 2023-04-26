@@ -5,7 +5,9 @@ import android.graphics.drawable.GradientDrawable
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.os.Handler
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.Window
@@ -16,10 +18,13 @@ import android.widget.GridLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.mongodb.ConnectionString
+import com.mongodb.MongoClientSettings
+import com.mongodb.client.MongoClient
+import com.mongodb.client.MongoClients
 import kotlinx.coroutines.delay
-import java.io.BufferedReader
-import java.io.InputStream
-import java.io.InputStreamReader
+import org.bson.Document
+import java.io.*
 import java.time.Duration
 import java.util.*
 import kotlin.random.Random
@@ -31,7 +36,6 @@ import kotlin.concurrent.timerTask
 class Game : AppCompatActivity() {
     var counter = 0;
     var sayac = 0
-
 
     //otomatik düsme icin tanımlanmıs bir cronjobın yöneticisi
     fun autoDownCronJobManager() {
@@ -55,6 +59,12 @@ class Game : AppCompatActivity() {
         }, 3000, 500) // 5000 milisaniye (5 saniye) sonra çağrılacak
         println("Program Devam Ediyor")
     }
+    fun scoreWriter() {
+        val textView = findViewById<TextView>(R.id.scoreHolder)
+        val textToSave = textView.text.toString()
+        val file = File(getFilesDir(), "saved_text.txt")
+
+    }
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -72,6 +82,7 @@ class Game : AppCompatActivity() {
         randomWordSender()
         onClicks()
         autoDownCronJobManager()
+        scoreWriter()
 
 
         val clickedButton = findViewById(R.id.correctTextView) as Button
@@ -676,7 +687,7 @@ class Game : AppCompatActivity() {
         val bufferedReader = BufferedReader(InputStreamReader(inputStream))
         val inputString = bufferedReader.use { it.readText() }
 
-        if (inputString.contains(searchWord)) {
+        if (inputString.contains(" "+searchWord+" ")) {
 
             var scoreCounter = findViewById(R.id.scoreHolder) as TextView
 
@@ -686,6 +697,7 @@ class Game : AppCompatActivity() {
 
             return "Metin dosyası aranan kelimeyi içeriyor. " + searchWord;
         } else {
+            // 3 kere yanlış girilidiğinde her sütundan harf düşürme işlemi
             // sayaç 1 de kalıyor artmıyor kafam almadı çözemedim çözdüm
             sayac += 1
             println(sayac)
@@ -931,9 +943,46 @@ class Game : AppCompatActivity() {
 
         for (button in buttons) {
             button.setOnClickListener {
-                val text = button.text.toString()
-                val currentText = editText.text.toString()
-                editText.setText("$currentText$text")
+                if(button.isSelected == true){
+//                    val text = button.text.toString()
+//                    var currentText = editText.text.toString()
+////                    val index = currentText.toCharArray().indexOf(text.toCharArray().get(0))
+////                    currentText = currentText.toCharArray().drop(index).toString()
+//
+//
+//                    var index = text.toCharArray().get(0);
+//
+//                    // String'i CharArray'a dönüştürme
+//                    val charArray = currentText.toCharArray()
+//
+//                    // Verilen karakteri silme
+//                    var newIndex = 0
+//                    for (oldIndex in charArray.indices) {
+//                        if (charArray[oldIndex] != index) {
+//                            charArray[newIndex] = charArray[oldIndex]
+//                            newIndex++
+//                        }
+//                        else{
+//                            index = '9';
+//
+//                        }
+//                    }
+//
+//                    // Yeni String'i oluşturma
+//                    val resultString = String(charArray.copyOf(newIndex))
+//
+//                    editText.setText("$resultString")
+//
+//
+//                    button.isSelected = false;
+
+                }
+                else {
+                    val text = button.text.toString()
+                    val currentText = editText.text.toString()
+                    editText.setText("$currentText$text")
+                    button.isSelected = true;
+                }
             }
         }
     }
