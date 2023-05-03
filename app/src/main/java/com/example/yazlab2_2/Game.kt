@@ -1,5 +1,6 @@
 package com.example.yazlab2_2
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.drawable.GradientDrawable
 import android.os.Build
@@ -59,12 +60,14 @@ class Game : AppCompatActivity() {
         }, 3000, 500) // 5000 milisaniye (5 saniye) sonra çağrılacak
         println("Program Devam Ediyor")
     }
+
     fun scoreWriter() {
         val textView = findViewById<TextView>(R.id.scoreHolder)
         val textToSave = textView.text.toString()
         val file = File(getFilesDir(), "saved_text.txt")
 
     }
+
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,20 +88,188 @@ class Game : AppCompatActivity() {
         scoreWriter()
 
 
+
         val clickedButton = findViewById(R.id.correctTextView) as Button
         clickedButton.setOnClickListener {
             var edit_text = (findViewById<View>(R.id.edit_text)) as TextView
             var isWordCorrectResult = isWordCorrect(edit_text.text)
+            edit_text.text = ""
+            findViewById<TextView>(R.id.B1).isSelected = false
+            findViewById<TextView>(R.id.B2).isSelected = false
+            findViewById<TextView>(R.id.B3).isSelected = false
+            findViewById<TextView>(R.id.B4).isSelected = false
+            findViewById<TextView>(R.id.B5).isSelected = false
+            findViewById<TextView>(R.id.B6).isSelected = false
+            findViewById<TextView>(R.id.B7).isSelected = false
+            findViewById<TextView>(R.id.B8).isSelected = false
+            findViewById<TextView>(R.id.B9).isSelected = false
+            findViewById<TextView>(R.id.B10).isSelected = false
+            findViewById<TextView>(R.id.B11).isSelected = false
+            findViewById<TextView>(R.id.B12).isSelected = false
+            findViewById<TextView>(R.id.B13).isSelected = false
+            findViewById<TextView>(R.id.B14).isSelected = false
+            findViewById<TextView>(R.id.B15).isSelected = false
+            findViewById<TextView>(R.id.B16).isSelected = false
+            findViewById<TextView>(R.id.B17).isSelected = false
+            findViewById<TextView>(R.id.B18).isSelected = false
+            findViewById<TextView>(R.id.B19).isSelected = false
+            findViewById<TextView>(R.id.B19).isSelected = false
+            findViewById<TextView>(R.id.B20).isSelected = false
+            findViewById<TextView>(R.id.B21).isSelected = false
+            findViewById<TextView>(R.id.B22).isSelected = false
+            findViewById<TextView>(R.id.B23).isSelected = false
+            findViewById<TextView>(R.id.B24).isSelected = false
+            findViewById<TextView>(R.id.B25).isSelected = false
+            findViewById<TextView>(R.id.B26).isSelected = false
+            findViewById<TextView>(R.id.B27).isSelected = false
+            findViewById<TextView>(R.id.B28).isSelected = false
+            findViewById<TextView>(R.id.B29).isSelected = false
+            findViewById<TextView>(R.id.B30).isSelected = false
+            findViewById<TextView>(R.id.B31).isSelected = false
+            findViewById<TextView>(R.id.B32).isSelected = false
+            findViewById<TextView>(R.id.B33).isSelected = false
+            findViewById<TextView>(R.id.B34).isSelected = false
+            findViewById<TextView>(R.id.B35).isSelected = false
+            findViewById<TextView>(R.id.B36).isSelected = false
+            findViewById<TextView>(R.id.B37).isSelected = false
+            findViewById<TextView>(R.id.B38).isSelected = false
+            findViewById<TextView>(R.id.B39).isSelected = false
+            findViewById<TextView>(R.id.B40).isSelected = false
+            findViewById<TextView>(R.id.B41).isSelected = false
+            findViewById<TextView>(R.id.B42).isSelected = false
+            findViewById<TextView>(R.id.B43).isSelected = false
+            findViewById<TextView>(R.id.B44).isSelected = false
+            findViewById<TextView>(R.id.B45).isSelected = false
+            findViewById<TextView>(R.id.B46).isSelected = false
+            findViewById<TextView>(R.id.B47).isSelected = false
+            findViewById<TextView>(R.id.B48).isSelected = false
+            findViewById<TextView>(R.id.B49).isSelected = false
+            findViewById<TextView>(R.id.B50).isSelected = false
+            findViewById<TextView>(R.id.B51).isSelected = false
+            findViewById<TextView>(R.id.B52).isSelected = false
+            findViewById<TextView>(R.id.B53).isSelected = false
+            findViewById<TextView>(R.id.B54).isSelected = false
+            findViewById<TextView>(R.id.B55).isSelected = false
+            findViewById<TextView>(R.id.B56).isSelected = false
+            findViewById<TextView>(R.id.B57).isSelected = false
+            findViewById<TextView>(R.id.B58).isSelected = false
+            findViewById<TextView>(R.id.B59).isSelected = false
+            findViewById<TextView>(R.id.B60).isSelected = false
+            findViewById<TextView>(R.id.B61).isSelected = false
+            findViewById<TextView>(R.id.B62).isSelected = false
+            findViewById<TextView>(R.id.B63).isSelected = false
+            findViewById<TextView>(R.id.B64).isSelected = false
+            findViewById<TextView>(R.id.B65).isSelected = false
+            findViewById<TextView>(R.id.B66).isSelected = false
+            findViewById<TextView>(R.id.B67).isSelected = false
+            findViewById<TextView>(R.id.B68).isSelected = false
+            findViewById<TextView>(R.id.B69).isSelected = false
+            findViewById<TextView>(R.id.B70).isSelected = false
+            findViewById<TextView>(R.id.B71).isSelected = false
+            findViewById<TextView>(R.id.B72).isSelected = false
+            findViewById<TextView>(R.id.B73).isSelected = false
+            findViewById<TextView>(R.id.B74).isSelected = false
+            findViewById<TextView>(R.id.B75).isSelected = false
+            findViewById<TextView>(R.id.B76).isSelected = false
+            findViewById<TextView>(R.id.B77).isSelected = false
+            findViewById<TextView>(R.id.B78).isSelected = false
+            findViewById<TextView>(R.id.B79).isSelected = false
+            findViewById<TextView>(R.id.B80).isSelected = false
+
         }
         val secondClickedButton = findViewById(R.id.wrongTextView) as Button
         secondClickedButton.setOnClickListener {
             var edit_text = (findViewById<View>(R.id.edit_text)) as TextView
             edit_text.text = ""
+            findViewById<TextView>(R.id.B1).isSelected = false
+            findViewById<TextView>(R.id.B2).isSelected = false
+            findViewById<TextView>(R.id.B3).isSelected = false
+            findViewById<TextView>(R.id.B4).isSelected = false
+            findViewById<TextView>(R.id.B5).isSelected = false
+            findViewById<TextView>(R.id.B6).isSelected = false
+            findViewById<TextView>(R.id.B7).isSelected = false
+            findViewById<TextView>(R.id.B8).isSelected = false
+            findViewById<TextView>(R.id.B9).isSelected = false
+            findViewById<TextView>(R.id.B10).isSelected = false
+            findViewById<TextView>(R.id.B11).isSelected = false
+            findViewById<TextView>(R.id.B12).isSelected = false
+            findViewById<TextView>(R.id.B13).isSelected = false
+            findViewById<TextView>(R.id.B14).isSelected = false
+            findViewById<TextView>(R.id.B15).isSelected = false
+            findViewById<TextView>(R.id.B16).isSelected = false
+            findViewById<TextView>(R.id.B17).isSelected = false
+            findViewById<TextView>(R.id.B18).isSelected = false
+            findViewById<TextView>(R.id.B19).isSelected = false
+            findViewById<TextView>(R.id.B19).isSelected = false
+            findViewById<TextView>(R.id.B20).isSelected = false
+            findViewById<TextView>(R.id.B21).isSelected = false
+            findViewById<TextView>(R.id.B22).isSelected = false
+            findViewById<TextView>(R.id.B23).isSelected = false
+            findViewById<TextView>(R.id.B24).isSelected = false
+            findViewById<TextView>(R.id.B25).isSelected = false
+            findViewById<TextView>(R.id.B26).isSelected = false
+            findViewById<TextView>(R.id.B27).isSelected = false
+            findViewById<TextView>(R.id.B28).isSelected = false
+            findViewById<TextView>(R.id.B29).isSelected = false
+            findViewById<TextView>(R.id.B30).isSelected = false
+            findViewById<TextView>(R.id.B31).isSelected = false
+            findViewById<TextView>(R.id.B32).isSelected = false
+            findViewById<TextView>(R.id.B33).isSelected = false
+            findViewById<TextView>(R.id.B34).isSelected = false
+            findViewById<TextView>(R.id.B35).isSelected = false
+            findViewById<TextView>(R.id.B36).isSelected = false
+            findViewById<TextView>(R.id.B37).isSelected = false
+            findViewById<TextView>(R.id.B38).isSelected = false
+            findViewById<TextView>(R.id.B39).isSelected = false
+            findViewById<TextView>(R.id.B40).isSelected = false
+            findViewById<TextView>(R.id.B41).isSelected = false
+            findViewById<TextView>(R.id.B42).isSelected = false
+            findViewById<TextView>(R.id.B43).isSelected = false
+            findViewById<TextView>(R.id.B44).isSelected = false
+            findViewById<TextView>(R.id.B45).isSelected = false
+            findViewById<TextView>(R.id.B46).isSelected = false
+            findViewById<TextView>(R.id.B47).isSelected = false
+            findViewById<TextView>(R.id.B48).isSelected = false
+            findViewById<TextView>(R.id.B49).isSelected = false
+            findViewById<TextView>(R.id.B50).isSelected = false
+            findViewById<TextView>(R.id.B51).isSelected = false
+            findViewById<TextView>(R.id.B52).isSelected = false
+            findViewById<TextView>(R.id.B53).isSelected = false
+            findViewById<TextView>(R.id.B54).isSelected = false
+            findViewById<TextView>(R.id.B55).isSelected = false
+            findViewById<TextView>(R.id.B56).isSelected = false
+            findViewById<TextView>(R.id.B57).isSelected = false
+            findViewById<TextView>(R.id.B58).isSelected = false
+            findViewById<TextView>(R.id.B59).isSelected = false
+            findViewById<TextView>(R.id.B60).isSelected = false
+            findViewById<TextView>(R.id.B61).isSelected = false
+            findViewById<TextView>(R.id.B62).isSelected = false
+            findViewById<TextView>(R.id.B63).isSelected = false
+            findViewById<TextView>(R.id.B64).isSelected = false
+            findViewById<TextView>(R.id.B65).isSelected = false
+            findViewById<TextView>(R.id.B66).isSelected = false
+            findViewById<TextView>(R.id.B67).isSelected = false
+            findViewById<TextView>(R.id.B68).isSelected = false
+            findViewById<TextView>(R.id.B69).isSelected = false
+            findViewById<TextView>(R.id.B70).isSelected = false
+            findViewById<TextView>(R.id.B71).isSelected = false
+            findViewById<TextView>(R.id.B72).isSelected = false
+            findViewById<TextView>(R.id.B73).isSelected = false
+            findViewById<TextView>(R.id.B74).isSelected = false
+            findViewById<TextView>(R.id.B75).isSelected = false
+            findViewById<TextView>(R.id.B76).isSelected = false
+            findViewById<TextView>(R.id.B77).isSelected = false
+            findViewById<TextView>(R.id.B78).isSelected = false
+            findViewById<TextView>(R.id.B79).isSelected = false
+            findViewById<TextView>(R.id.B80).isSelected = false
         }
         val startColor = Color.BLACK
         val endColor = Color.BLUE
 
-        val gradientDrawable = GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, intArrayOf(startColor, endColor))
+        val gradientDrawable = GradientDrawable(
+            GradientDrawable.Orientation.TOP_BOTTOM,
+            intArrayOf(startColor, endColor)
+        )
         window.decorView.background = gradientDrawable
 
 
@@ -220,6 +391,17 @@ class Game : AppCompatActivity() {
         }
         Thread.sleep(40)
 
+        if (findViewById<TextView>(R.id.B1).text.isNotEmpty() && findViewById<TextView>(R.id.B9).text.isNotEmpty() && findViewById<TextView>(
+                R.id.B17
+            ).text.isNotEmpty()
+        ) {
+
+            val intent = Intent(this, Finish::class.java)
+            intent.putExtra("sonuc",WordRecord(""))
+            startActivity(intent)
+
+        }
+
         return "";
     }
 
@@ -286,6 +468,17 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B74).text = B2Char
         }
         Thread.sleep(40)
+
+        if (findViewById<TextView>(R.id.B2).text.isNotEmpty() && findViewById<TextView>(R.id.B10).text.isNotEmpty() && findViewById<TextView>(
+                R.id.B18
+            ).text.isNotEmpty()
+        ) {
+
+            val intent = Intent(this, Finish::class.java)
+            intent.putExtra("sonuc",WordRecord(""))
+            startActivity(intent)
+        }
+
         return "";
     }
 
@@ -352,6 +545,16 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B75).text = B2Char
         }
         Thread.sleep(40)
+
+        if (findViewById<TextView>(R.id.B3).text.isNotEmpty() && findViewById<TextView>(R.id.B11).text.isNotEmpty() && findViewById<TextView>(
+                R.id.B19
+            ).text.isNotEmpty()
+        ) {
+
+            val intent = Intent(this, Finish::class.java)
+            intent.putExtra("sonuc",WordRecord(""))
+            startActivity(intent)
+        }
 
         return "";
     }
@@ -420,6 +623,15 @@ class Game : AppCompatActivity() {
         }
         Thread.sleep(40)
 
+        if (findViewById<TextView>(R.id.B4).text.isNotEmpty() && findViewById<TextView>(R.id.B12).text.isNotEmpty() && findViewById<TextView>(
+                R.id.B20
+            ).text.isNotEmpty()
+        ) {
+
+            val intent = Intent(this, Finish::class.java)
+            intent.putExtra("sonuc",WordRecord(""))
+            startActivity(intent)
+        }
 
         return "";
     }
@@ -488,6 +700,16 @@ class Game : AppCompatActivity() {
         }
         Thread.sleep(40)
 
+        if (findViewById<TextView>(R.id.B5).text.isNotEmpty() && findViewById<TextView>(R.id.B13).text.isNotEmpty() && findViewById<TextView>(
+                R.id.B21
+            ).text.isNotEmpty()
+        ) {
+
+
+            val intent = Intent(this, Finish::class.java)
+            intent.putExtra("sonuc",WordRecord(""))
+            startActivity(intent)
+        }
 
         return "";
     }
@@ -556,6 +778,15 @@ class Game : AppCompatActivity() {
         }
         Thread.sleep(40)
 
+        if (findViewById<TextView>(R.id.B6).text.isNotEmpty() && findViewById<TextView>(R.id.B14).text.isNotEmpty() && findViewById<TextView>(
+                R.id.B22
+            ).text.isNotEmpty()
+        ) {
+
+            val intent = Intent(this, Finish::class.java)
+            intent.putExtra("sonuc",WordRecord(""))
+            startActivity(intent)
+        }
 
         return "";
     }
@@ -567,7 +798,7 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B15).text = B7Char
         }
         Thread.sleep(40)
-        if(findViewById<TextView>(R.id.B15).text != "" && findViewById<TextView>(R.id.B23).text == ""){
+        if (findViewById<TextView>(R.id.B15).text != "" && findViewById<TextView>(R.id.B23).text == "") {
             val B7Char = findViewById<TextView>(R.id.B15).text
             findViewById<TextView>(R.id.B15).text = ""
             findViewById<TextView>(R.id.B23).text = B7Char
@@ -579,7 +810,7 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B31).text = B7Char
         }
         Thread.sleep(40)
-        if(findViewById<TextView>(R.id.B31).text != "" && findViewById<TextView>(R.id.B39).text == ""){
+        if (findViewById<TextView>(R.id.B31).text != "" && findViewById<TextView>(R.id.B39).text == "") {
             val B7Char = findViewById<TextView>(R.id.B31).text
             findViewById<TextView>(R.id.B31).text = ""
             findViewById<TextView>(R.id.B39).text = B7Char
@@ -591,13 +822,13 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B47).text = B7Char
         }
         Thread.sleep(40)
-        if(findViewById<TextView>(R.id.B47).text != "" && findViewById<TextView>(R.id.B55).text == ""){
+        if (findViewById<TextView>(R.id.B47).text != "" && findViewById<TextView>(R.id.B55).text == "") {
             val B7Char = findViewById<TextView>(R.id.B47).text
             findViewById<TextView>(R.id.B47).text = ""
             findViewById<TextView>(R.id.B55).text = B7Char
         }
         Thread.sleep(40)
-        if(findViewById<TextView>(R.id.B55).text != "" && findViewById<TextView>(R.id.B63).text == ""){
+        if (findViewById<TextView>(R.id.B55).text != "" && findViewById<TextView>(R.id.B63).text == "") {
             val B7Char = findViewById<TextView>(R.id.B55).text
             findViewById<TextView>(R.id.B55).text = ""
             findViewById<TextView>(R.id.B63).text = B7Char
@@ -609,14 +840,24 @@ class Game : AppCompatActivity() {
             findViewById<TextView>(R.id.B71).text = B7Char
         }
         Thread.sleep(40)
-        if(findViewById<TextView>(R.id.B71).text != "" && findViewById<TextView>(R.id.B79).text == ""){
+        if (findViewById<TextView>(R.id.B71).text != "" && findViewById<TextView>(R.id.B79).text == "") {
             val B7Char = findViewById<TextView>(R.id.B71).text
             findViewById<TextView>(R.id.B71).text = ""
             findViewById<TextView>(R.id.B79).text = B7Char
         }
         Thread.sleep(40)
 
+        if (findViewById<TextView>(R.id.B7).text.isNotEmpty() && findViewById<TextView>(R.id.B15).text.isNotEmpty() && findViewById<TextView>(
+                R.id.B23
+            ).text.isNotEmpty()
+        ) {
 
+            val intent = Intent(this, Finish::class.java)
+
+            intent.putExtra("sonuc",WordRecord(""))
+            startActivity(intent)
+
+        }
 
         return "";
     }
@@ -678,22 +919,52 @@ class Game : AppCompatActivity() {
         Thread.sleep(40)
 
 
+        if (findViewById<TextView>(R.id.B8).text.isNotEmpty() && findViewById<TextView>(R.id.B16).text.isNotEmpty() && findViewById<TextView>(
+                R.id.B24
+            ).text.isNotEmpty()
+        ) {
+
+            val intent = Intent(this, Finish::class.java)
+            intent.putExtra("sonuc",WordRecord(""))
+            startActivity(intent)
+        }
+
         return "";
     }
+    var sonucAlHolder = ""
+
+    private fun WordRecord(sonucAl: String): String {
+
+        if(sonucAl.equals("")) {
+            return sonucAlHolder
+        }else{
+            sonucAlHolder = sonucAl;
+        }
+        return ""
+    }
+
 
 
     private fun isWordCorrect(searchWord: CharSequence): Any {
         val inputStream: InputStream = assets.open("kelime_havuzu.txt")
         val bufferedReader = BufferedReader(InputStreamReader(inputStream))
         val inputString = bufferedReader.use { it.readText() }
+        var scoreCounter = findViewById(R.id.scoreHolder) as TextView;
 
-        if (inputString.contains(" "+searchWord+" ")) {
 
-            var scoreCounter = findViewById(R.id.scoreHolder) as TextView
+
+        if (inputString.contains(" " + searchWord + " ")) {
+
+
+
 
             calculateWordPoint(searchWord.toString());
 
             scoreCounter.text = counter.toString()
+
+
+            WordRecord(scoreCounter.text.toString())
+
 
             return "Metin dosyası aranan kelimeyi içeriyor. " + searchWord;
         } else {
@@ -701,8 +972,7 @@ class Game : AppCompatActivity() {
             // sayaç 1 de kalıyor artmıyor kafam almadı çözemedim çözdüm
             sayac += 1
             println(sayac)
-        }
-        if(sayac == 3){
+            if (sayac == 3) {
                 findViewById<TextView>(R.id.B1).text = randomChar().toString();
                 findViewById<TextView>(R.id.B2).text = randomChar().toString();
                 findViewById<TextView>(R.id.B3).text = randomChar().toString();
@@ -712,13 +982,16 @@ class Game : AppCompatActivity() {
                 findViewById<TextView>(R.id.B7).text = randomChar().toString();
                 findViewById<TextView>(R.id.B8).text = randomChar().toString();
                 sayac = 0
+            }
+            return false;
         }
+
 
         return false;
     }
 
     // fe'den harfler büyük geliyor textte küçük harfler var aşağıda büyük harfler var  ayarladım küçük harf girişi iptal
-    private fun calculateWordPoint(searchWordChar: String) : String {
+    private fun calculateWordPoint(searchWordChar: String): String {
 
         val valueOfChars = mapOf(
             "A" to 1,
@@ -943,7 +1216,7 @@ class Game : AppCompatActivity() {
 
         for (button in buttons) {
             button.setOnClickListener {
-                if(button.isSelected == true){
+                if (button.isSelected == true) {
 //                    val text = button.text.toString()
 //                    var currentText = editText.text.toString()
 ////                    val index = currentText.toCharArray().indexOf(text.toCharArray().get(0))
@@ -976,8 +1249,7 @@ class Game : AppCompatActivity() {
 //
 //                    button.isSelected = false;
 
-                }
-                else {
+                } else {
                     val text = button.text.toString()
                     val currentText = editText.text.toString()
                     editText.setText("$currentText$text")
